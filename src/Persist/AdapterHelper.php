@@ -23,6 +23,8 @@ trait AdapterHelper
      */
     public function loadPolicyLine(string $line, Model $model): void
     {
+        $line = rtrim($line);
+
         if ('' == $line) {
             return;
         }
