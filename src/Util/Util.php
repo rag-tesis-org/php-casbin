@@ -55,13 +55,14 @@ class Util
     /**
      * Gets a printable string for a string array.
      *
-     * @param array $s
+     * @param array  $s
+     * @param string $separator
      *
      * @return string
      */
-    public static function arrayToString(array $s): string
+    public static function arrayToString(array $s, string $separator = ', '): string
     {
-        return implode(', ', $s);
+        return implode($separator, $s);
     }
 
     /**
