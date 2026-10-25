@@ -209,4 +209,23 @@ class Util
 
         return false;
     }
+
+    /**
+     * Determines whether the IP address belongs to at least one of the given CIDR ranges.
+     *
+     * @param string   $ipAddress
+     * @param string[] $cidrAddresses
+     *
+     * @return bool
+     */
+    public static function isIpInAnySubnet(string $ipAddress, array $cidrAddresses): bool
+    {
+        foreach ($cidrAddresses as $cidrAddress) {
+            if (self::ipInSubnet($ipAddress, $cidrAddress)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
