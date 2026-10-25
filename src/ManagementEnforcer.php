@@ -204,6 +204,27 @@ class ManagementEnforcer extends InternalEnforcer
     }
 
     /**
+     * Counts the rules of the given policy or grouping policy type.
+     *
+     * Policy types (p, p2, ...) count authorization rules; grouping types (g, g2, ...) count role inheritance rules.
+     * Returns 0 if the type is not defined in the model.
+     *
+     * @param string $ptype
+     *
+     * @return int
+     */
+    public function countPolicies(string $ptype = 'p'): int
+    {
+        $sec = str_starts_with($ptype, 'g') ? 'g' : 'p';
+
+        if (!isset($this->model[$sec][$ptype])) {
+            return 0;
+        }
+
+        return count($this->model->getPolicy($sec, $ptype));
+    }
+
+    /**
      * Gets all the role inheritance rules in the policy, field filters can be specified.
      *
      * @param string $ptype
