@@ -298,6 +298,20 @@ class Enforcer extends ManagementEnforcer
     }
 
     /**
+     * Determines whether a user has a role, directly or through role inheritance.
+     *
+     * @param string $user
+     * @param string $role
+     * @param string ...$domain
+     *
+     * @return bool
+     */
+    public function hasImplicitRoleForUser(string $user, string $role, string ...$domain): bool
+    {
+        return in_array($role, $this->getImplicitRolesForUser($user, ...$domain), true);
+    }
+
+    /**
      * GetNamedImplicitRolesForUser gets implicit roles that a user has by named role definition.
      * Compared to getImplicitRolesForUser(), this function retrieves indirect roles besides direct roles.
      * For example:
