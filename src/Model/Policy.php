@@ -668,3 +668,4 @@ abstract class Policy implements ArrayAccess
         unset($this->items[$offset]);
     }
 }
+// oe2-support

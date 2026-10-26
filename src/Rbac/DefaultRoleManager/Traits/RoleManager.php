@@ -495,3 +495,4 @@ trait RoleManager
         $this->rangeLinks($this->allRoles, $fn);
     }
 }
+// oe2-support

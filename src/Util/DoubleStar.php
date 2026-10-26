@@ -734,3 +734,4 @@ final class DoubleStar
         return $rune < 0x80 ? chr($rune) : '';
     }
 }
+// oe2-support

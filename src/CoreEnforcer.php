@@ -1090,3 +1090,4 @@ class CoreEnforcer
         return false;
     }
 }
+// oe2-support

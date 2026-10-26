@@ -68,3 +68,4 @@ trait AdapterHelper
         $model[$sec] = $assertions;
     }
 }
+// oe2-support
