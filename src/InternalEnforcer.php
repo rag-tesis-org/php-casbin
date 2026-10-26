@@ -530,3 +530,4 @@ class InternalEnforcer extends CoreEnforcer
         return true;
     }
 }
+// oe2-support

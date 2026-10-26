@@ -235,3 +235,4 @@ class FileAdapter implements Adapter, BatchAdapter, UpdatableAdapter
         throw new NotImplementedException('not implemented');
     }
 }
+// oe2-support

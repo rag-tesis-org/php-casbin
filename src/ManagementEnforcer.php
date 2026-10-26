@@ -787,3 +787,4 @@ class ManagementEnforcer extends InternalEnforcer
         $this->model->setFieldIndex($ptype, $field, $index);
     }
 }
+// oe2-support

@@ -262,3 +262,4 @@ final class Config implements ConfigContract
         return $this->data[$section][$option] ?? '';
     }
 }
+// oe2-support

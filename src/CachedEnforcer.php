@@ -259,3 +259,4 @@ class CachedEnforcer extends Enforcer
         return $this->getCacheKey(...$rvals);
     }
 }
+// oe2-support

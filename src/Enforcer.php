@@ -876,3 +876,4 @@ class Enforcer extends ManagementEnforcer
         return $roles;
     }
 }
+// oe2-support

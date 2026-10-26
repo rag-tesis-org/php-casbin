@@ -341,3 +341,4 @@ trait DomainManager
         return $domains;
     }
 }
+// oe2-support
