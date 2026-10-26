@@ -258,6 +258,27 @@ class Enforcer extends ManagementEnforcer
     }
 
     /**
+     * Gets the permissions of a user or role restricted to the given object.
+     *
+     * Returns the rules from getPermissionsForUser() whose object field equals $obj,
+     * preserving their order.
+     *
+     * @param string $user
+     * @param string $obj
+     *
+     * @return array
+     */
+    public function getPermissionsForUserByObject(string $user, string $obj): array
+    {
+        $objIndex = $this->model->getFieldIndex('p', Constants::OBJECT_INDEX);
+
+        return array_values(array_filter(
+            $this->getPermissionsForUser($user),
+            static fn (array $rule): bool => ($rule[$objIndex] ?? null) === $obj
+        ));
+    }
+
+    /**
      * Determines whether a user has a permission.
      *
      * @param string $user
